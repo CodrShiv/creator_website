@@ -1,0 +1,140 @@
+.twitter_main {
+    max-width: 98vw !important;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items:stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 93vh !important; 
+    padding: 2rem 4rem;
+    gap: 2rem;
+    margin-right: 14rem;
+}
+.twitter_main a {
+    text-decoration: none;
+    color: #16202A;
+    border-radius: .5rem;
+    padding: .3rem .75rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+.tweet_text a {
+    display: inline-block;
+    color: #16202A;
+    font-weight: 700;
+    padding: 0 .5rem 0 0;
+    transition: all 200ms ease;
+}
+.tweet_text a:hover {
+    transform: scale(1.05);
+}
+.media {
+    min-height: 31rem;
+}
+.nomedia {
+    min-height: 10rem;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.twitter_logo {
+    width: 4rem;height: 4rem;
+    border-radius: 50% !important;
+}
+.profile a {
+    position: absolute;
+    border-radius: 0;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    top: 0;
+    right: 0;
+    color: rgba(255,255,255,.6);
+    padding: .5rem 1rem;
+    background-color: hsl(202, 96%, 25%);
+}
+.tweet{
+    position: relative;
+    color: #16202A;
+    background: rgba(255,255,255,.7);
+    border-radius: 2rem;
+    z-index: 2;
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem ;
+    transition: all 300ms ease;
+    max-width: 25rem;
+    z-index: 2;
+}
+.tweet_link {
+    display: block;
+}
+.tweet img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 1rem;
+}
+.tweet_link:hover .tweet{
+    box-shadow: 2rem 2rem 2rem rgba(255,255,255,.05);
+    transform: scale(1.01);
+}
+
+.layers_twitter {
+    height: 100%;
+}
+.layers_twitter {
+    position: absolute;
+    right: 0;
+    opacity: 1;
+    z-index: 5;
+}
+.profile_container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+}
+
+.user_name_box {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+}
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+.user_handle_box {
+    color:rgba(22, 32, 42,.5);
+}
+@media only screen and (max-width: 800px) {
+    .twitter_main {
+        margin-right: 0rem;
+    }
+    .layers_twitter {
+        display: none;        
+    }
+}
+@media only screen and (max-width: 520px) {
+    .twitter_main {
+        font-size: 16px;
+        padding: 2rem 1rem;
+    }
+    .tweet {
+        width: 30rem;
+        max-width: 100vw;
+    }
+}
