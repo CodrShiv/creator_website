@@ -7,6 +7,9 @@ const axios = require("axios"),
   serverless = require("serverless-http"),
   router = express.Router();
 
+
+  app.use(cors())
+
 // ENVIRONMENT VARIABLES
 
 dotenv.config();
@@ -78,7 +81,7 @@ const getData = () => {
 
     respond(data);
   };
-  if (data && new Date().getTime() - data.time <= 60000) {
+  if (data && new Date().getTime() - data.time <= 3600000) {
     respond(data);
   } else {
     API();
