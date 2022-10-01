@@ -5,12 +5,23 @@
 body {
   background: var(--primary-dark) !important;
 }
+.home_main_container {
+  display: flex;
+  justify-content: center;
+  align-items: space-between;
+  padding:5vh 0;
+  max-height: 100vh;
+  height: 95vh !important
+}
+
 .home_main {
   display: flex;
+  margin: auto;
   align-items: center;
-  justify-content: center;
+  gap: 1.5rem;
+  max-height: 40rem !important;
+  justify-content: space-between;
   flex-direction: column;
-  height: 100vh;
 }
 /* LOGO */
 .logo_main {
@@ -19,12 +30,11 @@ body {
   max-height: 40vh;
   height: 20rem !important;
   border-radius: 50%;
+  box-shadow: 0 0 0 0.25rem rgba(0, 102, 255,.5), 0 0 0 0.5rem rgba(0, 84, 196,.5),
+  0 0 0 1rem rgba(0, 64, 139,.5), 0 0 0 1.5rem rgba(0, 42, 84,.5);
 }
 /* EMAIL BOX */
-.email_box {
-  margin-top: clamp(1rem, 3rem, 2rem);
-  margin-bottom: clamp(1rem, 3rem, 2rem);
-}
+
 .email {
   text-decoration: none;
   color: var(--light);
@@ -32,7 +42,7 @@ body {
 }
 /* USER NAME */
 .title {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--light);
 }
@@ -143,16 +153,18 @@ body {
   font-size: 0.75rem;
   font-weight: 300;
 }
-
+.mobile {
+  display: none;
+}
 /* ILLUSTRATIONS */
-.bg_decor {
+.bg_decor.desktop {
   position: absolute;
 }
-.bg_decor {
+.bg_decor.desktop {
   max-width: 25vw;
   max-height: 100vh;
 }
-.bg_decor.left {
+.bg_decor.left.desktop {
   left: 0;
   transform: rotate(180deg);
 }
@@ -168,6 +180,10 @@ body {
 .layer {
   transform: translate(100%, -100%);
   animation: layer 1000ms forwards;
+}
+.vlayer {
+  transform: translate(0, 100%);
+  animation: vlayer 1500ms forwards;
 }
 .base1 {
   animation-delay: 400ms;
@@ -193,7 +209,14 @@ body {
 .base8 {
   animation-delay: 1800ms;
 }
-
+@keyframes vlayer {
+  0% {
+    transform: translate(0, 100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 @keyframes layer {
   0% {
     transform: translate(100%, -100%);
@@ -203,57 +226,44 @@ body {
   }
 }
 
-@media only screen and (max-width: 1000px) and (min-width: 800px) {
-  .bg_decor.left.bottom {
+@media only screen and (max-width: 1000px) {
+  .desktop {
     display: none;
   }
-  .bg_decor.right.top {
-    max-height: 70vh;
-    max-width: 45vw;
+  .mobile {
+    display: block;
+    width: 100%;
+    position: absolute;
   }
-  .home_main_container {
-    display: flex;
-    align-items: flex-start;
+  .mobile.top {
+    transform: rotate(180deg);
+    top:0;
   }
-  .home_main {
-    padding-left: 5rem;
+  .mobile.bottom {
+    bottom: 0;
   }
+  
 }
-@media only screen and (max-width: 800px) {
-  .bg_decor.left.bottom {
-    display: none;
-  }
-  .bg_decor.right.top {
-    display: none;
-  }
-  .home_main_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-@media only screen and (max-width: 560px) {
+
+@media only screen and (max-width: 700px) {
   .home_main {
     font-size: 3vw !important;
   }
-  .bg_decor {
-    max-width: 50vw;
-    max-height: 20vh;
+  .title {
+    font-size: 8vw;
   }
   .socials_box {
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 1.5rem;
   }
-  .bg_decor.left.bottom {
-    display: block;
-    top: 0;
-    transform: rotate(-90deg);
+  .social_container {
+    align-items: center;
+    justify-content: center;
   }
-  .bg_decor.right.top {
-    display: block;
+  .fan_call {
+    display: none;
   }
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 450px) {
   .logo_text {
     display: flex;
     align-items: flex-start;
@@ -266,17 +276,34 @@ body {
     font-size: 1rem;
     margin-bottom: -0.5rem;
   }
-  .fan_call {
-    font-size: 0.5rem;
-    font-weight: 300;
-  }
   .logo svg {
     padding: .25rem;
     width: 1.2rem;
+  }
+  .socials_box {
+    gap: .2rem;
+    flex-wrap: wrap;
   }
   .logo {
     padding: 0.25rem;
     height: 1.5rem;
     width: 1.5rem;
+  }
+
+  .logo_main {
+    max-width: min(90vw, 35vh);
+    max-height: min(90vw, 35vh);
+  }
+}
+@media only screen and (max-height: 400px) {
+  .mobile {
+    display: none;
+  }
+  .home_main_container {
+    height: 100vh !important;
+    padding: 0;
+  }
+  .logo_main {
+    display: none;
   }
 }

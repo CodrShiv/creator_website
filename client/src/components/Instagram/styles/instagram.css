@@ -36,6 +36,7 @@
 }
 .profile_container_ig {
     display: flex;
+    z-index: 6;
     align-items: flex-end;
     justify-content: center;
     gap: 1.5rem;
@@ -45,8 +46,8 @@
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    box-shadow: 0 0 0 0.25rem rgba(204, 49, 120, 1), 0 0 0 0.5rem rgba(200, 49, 121, 0.75),
-    0 0 0 1rem rgba(120, 50, 150, 1), 0 0 0 1.5rem rgba(120,50,150,.5);
+    box-shadow: 0 0 0 0.25rem rgba(252, 176, 69,.5), 0 0 0 0.5rem rgba(255, 162, 70,.3),
+    0 0 0 1rem rgba(255, 133, 79,.25), 0 0 0 1.5rem rgba(255, 104, 95,.2);
 }
 .posts {
     display: flex;
@@ -74,7 +75,6 @@
     align-items: flex-end;
     justify-content: flex-end;
     position: relative;
-    padding-right: 2rem;
 }
 .overlay-left {
     width: 3rem;
@@ -85,16 +85,7 @@
     left: 0;
     background: linear-gradient(90deg, rgba(120,50,150,.5) 0%, rgba(255,255,255,0) 100%);
 }
-.overlay-right {
-    width: 3rem;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    z-index: 3;
-    right: 2rem;
-    filter: blur(1rem);
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(200, 49, 121, 0.75) 100%);
-}
+
 .post {
     width: 40vh !important;
     height: 50vh;
@@ -115,13 +106,25 @@
         top:unset;
         transform: rotate(-90deg);
     }
+    .posts {
+        max-width: 100vw !important;
+    }
     .ig_main {
         padding-top: 1rem;
         align-items: center;
         justify-content: flex-start;
     }
 }
-@media only screen and (max-width:970px) {
+@media only screen and (max-width:1050px) {
+    .profile_container_ig {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 3rem;
+    }
+    .profile_container_ig .handle {
+        font-size: 7vw;
+    }
     .overlay-right,.overlay-left {
         display: none;
     }
@@ -130,10 +133,21 @@
         height: 100vw !important;
     }
     .post img {
-        width: 48vw !important;
-        height: 64vw !important;
+        width: 40vh !important;
+        height: 50vh !important;
     }
     .corner.top.left {
         display: none;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .post img {
+        width: 100vw;
+        height: 80vw;
+    }
+    .posts {
+        gap: 3rem;
+        height: 100vh;
+        margin-top: 2rem;
     }
 }

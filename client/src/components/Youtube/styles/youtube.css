@@ -1,9 +1,6 @@
 .youtube_main {
-  max-height: 100vh !important;
-  max-width: 100vw;
   overflow-x: scroll;
   z-index: 3;
-  padding: 2.5rem 4rem 20rem 4rem;
 }
 iframe {
   border: 0.5rem solid rgb(255, 255, 255, 0.2);
@@ -12,13 +9,13 @@ iframe {
   position: absolute;
   bottom: 2rem;
   border-radius: 50%;
-  width: 15rem;
-  height: 15rem;
+  width: min(20vw, 16vh);
+  height: min(20vw, 16vh);
   margin-left: auto;
   margin-right: auto;
   left: 0;
   transition: all 300ms;
-  z-index: 2;
+  z-index: 10;
   right: 0;
   box-shadow: 0 0 0 0.25rem #b62c18, 0 0 0 0.5rem rgba(146, 48, 30, 0.75),
     0 0 0 1rem rgba(111, 48, 34, 0.5), 0 0 0 1.5rem rgba(77, 45, 37, 0.25);
@@ -34,12 +31,12 @@ iframe {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  max-height: calc(100vh - 15rem);
-  gap: 2rem;
-  padding: 2.5rem 4rem 2.5rem 4rem;
+  height: calc(100vh - 12rem);
+  gap: 1.75rem;
+  padding: 1.5rem 4rem 0 4rem;
 }
 .video {
-  min-height: 18rem;
+  min-height: 18em;
   width: 20rem;
   color: rgba(255, 255, 255, 0.75);
   background-color: rgba(255, 255, 255, 0.03);
@@ -56,8 +53,8 @@ iframe {
   font-weight: 500;
 }
 .video_title {
-  line-height: 1;
-  font-size: 1.1rem;
+  line-height: 1.2;
+  font-size: 1rem;
   font-weight: 600;
 }
 .thumbnail {
@@ -128,18 +125,18 @@ iframe {
 }
 
 .yt_layers {
-  position: absolute;
   z-index: 1;
+  width: 100vw;
+  position: absolute;
   bottom: 0;
-  transform: rotate(180deg);
-  max-width: 100vw;
 }
 
-@media only screen and (max-width:560px ) {
-  .youtube_videos {
-    max-height: calc(100vh - 15rem);
+@media only screen and (max-width: 360px) {
+  .video {
+    width: 18rem;
   }
-  .youtube_main {
-    font-size: 4vw;
+  .thumbnail {
+    width: 18rem;
+    min-height: 7.5rem !important;
   }
 }

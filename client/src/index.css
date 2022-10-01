@@ -11,7 +11,8 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
-
+.page {
+}
 ::-webkit-scrollbar {
     width: 5px;
     height: 0px;
@@ -31,7 +32,8 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    overflow: hidden;
+    overflow-x: hidden !important;
+    overflow-y: hidden ;
     top: 0;
     left: 0;
     width: 100%;

@@ -3,7 +3,7 @@ import Layers from "./assets/Layers";
 import { useState, useEffect } from "react";
 import { v4 } from "uuid";
 import moment from "moment";
-import Verified from "./assets/Verified";
+import getIcons from "./assets/getIcons";
 const Profile = (props) => {
   return (
     <div className="profile">
@@ -16,17 +16,12 @@ const Profile = (props) => {
         <div>
           <div className="user_name_box">
             <h1>{props.user_name}</h1>
-            <Verified />
+            {getIcons("verified")}
           </div>
           <p className="user_handle_box">
             {props.user_handle} • {props.time}
           </p>
         </div>
-      </div>{" "}
-      <div>
-        <a target="_blank" href={props.tweetID}>
-          View in Twitter
-        </a>
       </div>
     </div>
   );
@@ -38,8 +33,9 @@ const Tweet = (props) => {
   return (
     <article
       key={v4()}
-      className={`tweet _${props.corresponding_url ? media : nomedia} ${props.corresponding_url ? "media" : "nomedia"
-        }`}
+      className={`tweet _${props.corresponding_url ? media : nomedia} ${
+        props.corresponding_url ? "media" : "nomedia"
+      }`}
     >
       <Profile
         user_name={props.name}
@@ -48,9 +44,17 @@ const Tweet = (props) => {
         user_handle={`@${props.name}`}
         logo_url={props.PicUrl}
       />
-      <p className="tweet_text">{props.text}</p>
+      <p className="tweet_text">
+        {props.text}{" "}
+        <a className="redirect_link" target="_blank" href={props.tweetID}>
+          {getIcons("redirect")}
+        </a>
+      </p>
       {props.corresponding_url ? (
-        <img alt={`${props.name}'s Twitter Post`} src={props.corresponding_url.url} />
+        <img
+          alt={`${props.name}'s Twitter Post`}
+          src={props.corresponding_url.url}
+        />
       ) : (
         <></>
       )}
@@ -106,7 +110,9 @@ const ParseData = (props) => {
           ...prevState.array,
           <Tweet
             key={v4()}
-            tweetID={`https://twitter.com/${props.Name.toLowerCase()}/status/${ele.id}`}
+            tweetID={`https://twitter.com/${props.Name.toLowerCase()}/status/${
+              ele.id
+            }`}
             time={ele.created_at}
             corresponding_url={null}
             name={props.Name}
@@ -114,9 +120,9 @@ const ParseData = (props) => {
             PicUrl={props.PicUrl}
           />,
         ],
-        }));
+      }));
       // }
-      });
+    });
   }, [props.Data]);
 
   return elements.array;
@@ -148,8 +154,14 @@ const Twitter = (props) => {
       <aside className="twitter_aside">
         <Layers Name="layers_twitter" />
       </aside>
+      <div className="twitter_main_container">
       <div className="twitter_main">
-        <ParseData Name={props.Name} PicUrl={props.PicUrl} Data={props.Media ? props.Media : { data: [] }} />
+        <ParseData
+          Name={props.Name}
+          PicUrl={props.PicUrl}
+          Data={props.Media ? props.Media : { data: [] }}
+        />
+      </div>
       </div>
     </>
   );

@@ -59,7 +59,6 @@ const Instagram = (props) => {
         </div>
         <div className="posts_container">
           <div className="overlay-left"></div>
-          <div className="overlay-right"></div>
           <div className="posts">
             <Posts Data={props.Media ? props.Media : []} />
           </div>
