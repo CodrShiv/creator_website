@@ -11,9 +11,8 @@ const App = (props) => {
   let res;
   useEffect(() => {
     (async () => {
-      res = await axios.get(`${props.api}data`);
+      res = await axios.get(`${props.api}`);
       setData(res.data);
-      console.log(res);
     })();
   }, []);
   return (
