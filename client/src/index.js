@@ -5,9 +5,13 @@ import createScrollSnap from "scroll-snap";
 
 import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root")),
+  PRODUCTION = true,
   USER_NAME = "NomadicAmbience",
-  BASE_API_URL = "https://creator-website-server.netlify.app/.netlify/functions/api";
-
+  BASE_API_URL = `${
+    PRODUCTION
+      ? "https://creator-website-server.netlify.app"
+      : "http://localhost:9000"
+  }/.netlify/functions/api`;
 class Init extends React.Component {
   container = React.createRef();
   bindScrollSnap() {
