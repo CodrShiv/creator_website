@@ -13,7 +13,7 @@ const Feature = (props) => {
           transition: { ease: [0.6, 0.01, -0.05, 0.95], duration: 2 },
         },
       }}
-      className="feature_block"
+      className="feature_block link"
     >
       <img className="feature_icon" src={icon} alt={props.Name} />
       <p className="feature_name">{props.Name.toUpperCase()}</p>

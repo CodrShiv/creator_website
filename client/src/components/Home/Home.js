@@ -17,7 +17,7 @@ const Home = (props) => {
         <motion.img
           initial="initial"
           animate="animate"
-          className="logo_main"
+          className="logo_main link"
           variants={{
             initial: { opacity: 0, y: -20, zIndex: 3 },
             animate: {
@@ -35,7 +35,7 @@ const Home = (props) => {
           alt={`${props.Name}'s Logo`}
         />
         <motion.div
-          className="title"
+          className="title link"
           initial="initial"
           animate="animate"
           variants={{

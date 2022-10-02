@@ -9,12 +9,12 @@ const Profile = (props) => {
     <div className="profile">
       <div className="profile_container">
         <img
-          className="twitter_logo"
+          className="twitter_logo link"
           src={props.logo_url}
           alt={`${props.user_name}'s Logo`}
         />
         <div>
-          <div className="user_name_box">
+          <div className="user_name_box link">
             <h1>{props.user_name}</h1>
             {getIcons("verified")}
           </div>

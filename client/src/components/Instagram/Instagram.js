@@ -12,7 +12,7 @@ const Posts = (props) => {
       <>
         {props.Data.map((element) => {
           return (
-            <article className="post" key={v4()}>
+            <article className="post link" key={v4()}>
               <img src={element.media_url} alt="Instagram Post Picture" width="10rem" />
             </article>
           );
@@ -28,6 +28,11 @@ const Posts = (props) => {
           setInterval(() => {
             autoScroll(container);
           }, 50);
+          ele.classList.add("visible")
+          ele.classList.remove("invisible")
+        } else {
+          ele.classList.remove("visible")
+          ele.classList.add("invisible")
         }
       },
       { threshold: 0.5 }
@@ -52,10 +57,11 @@ const Instagram = (props) => {
       <div className="ig_main">
         <div className="profile_container_ig">
           <img
+          className="link"
             alt={`${props.Name}'s Logo`}
             src={`${process.env.PUBLIC_URL}/assets/logo.jpg`}
           />
-          <h1 className="handle">{props.Name}</h1>
+          <h1 className="handle link"><span className="handle_at">@</span>{props.Name}</h1>
         </div>
         <div className="posts_container">
           <div className="overlay-left"></div>

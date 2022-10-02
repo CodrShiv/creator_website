@@ -114,22 +114,7 @@
   justify-content: flex-start;
   gap: 0.5rem;
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+
 .user_handle_box {
   color: rgba(22, 32, 42, 0.5);
 }
@@ -174,11 +159,11 @@
 @keyframes fadeDown {
   0% {
     opacity: 0;
-    transform: translate(0, -2rem);
+    transform: translateX(-2rem);
   }
   100% {
     opacity: 1;
-    transform: translate(0, 0rem);
+    transform: translateX(0rem);
   }
 }
 @keyframes fadeFromRight {
@@ -204,10 +189,10 @@
 @keyframes fadeUp {
   0% {
     opacity: 1;
-    transform: translateY(0rem);
+    transform: translateX(0rem);
   }
   100% {
     opacity: 0;
-    transform: translateY(-2rem);
+    transform: translateX(-2rem);
   }
 }

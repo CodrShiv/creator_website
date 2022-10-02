@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import createScrollSnap from "scroll-snap";
+import AnimatedCursor from "react-animated-cursor";
 
 import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root")),
@@ -32,9 +33,22 @@ class Init extends React.Component {
       document.querySelector("#container").style.overflowY = "auto";
     }, 7200);
     return (
-      <div id="container" ref={this.container}>
-        <App username={USER_NAME} api={BASE_API_URL} />
-      </div>
+      <>
+        <AnimatedCursor innerSize={8}
+      outerSize={8}
+      color='0, 102, 255'
+      outerAlpha={0.4}
+      innerScale={1.5}
+      outerScale={5}
+      clickables={[
+        'a',
+        '.link'
+      ]}/>
+
+        <div id="container" ref={this.container}>
+          <App username={USER_NAME} api={BASE_API_URL} />
+        </div>
+      </>
     );
   }
 }

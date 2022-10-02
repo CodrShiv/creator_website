@@ -72,9 +72,13 @@
   z-index: 1;
   color: #dfcbe4;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
   padding-right: 2rem;
+}
+.handle_at {
+  font-size: 4rem;
+  opacity: .75;
 }
 .layers_ig {
   display: none;
@@ -186,23 +190,70 @@
     transform: translate(0, 0rem);
   }
 }
-@keyframes fadeFromDown {
+
+.base {
+  transform: translate(-100%, 0);
+}
+
+.corner.right {
+  transform: translate(100%, 0);
+}
+.visible .base {
+  animation: layer 1000ms forwards;
+}
+.visible .corner.right {
+  animation: logo 2s ease 200ms forwards;
+}
+.visible .base1 {
+  animation-delay: 400ms;
+}
+.visible .base2 {
+  animation-delay: 600ms;
+}
+.visible .base3 {
+  animation-delay: 800ms;
+}
+.visible .base4 {
+  animation-delay: 1000ms;
+}
+.visible .base5 {
+  animation-delay: 1200ms;
+}
+.visible .base6 {
+  animation-delay: 1400ms;
+}
+.visible .base7 {
+  animation-delay: 1600ms;
+}
+.visible .base8 {
+  animation-delay: 1800ms;
+}
+.profile_container_ig img, .handle {
+  opacity: 0;
+  transform: translate(0, -2rem);
+}
+.visible .profile_container_ig img, .visible .handle {
+  animation: fadeDown 2s 1s forwards;
+}
+.visible .handle {
+  animation-delay: 2s !important;
+}
+.posts {
+  transform: translate(100%, 0);
+}
+.visible .posts {
+  animation: layer 2s 3s forwards;
+}
+@keyframes logo {
   0% {
-    opacity: 0;
-    transform: translate(0, 100%);
+    transform: translate(100%, 0);
   }
   100% {
-    opacity: 1;
     transform: translate(0, 0);
   }
 }
-@keyframes fadeUp {
-  0% {
-    opacity: 1;
-    transform: translateY(0rem);
-  }
+@keyframes layer {
   100% {
-    opacity: 0;
-    transform: translateY(-2rem);
+    transform: translate(0, 0);
   }
 }

@@ -28,7 +28,7 @@ const Video = (props) => {
               background: `url(${element.snippet.thumbnails.high.url}) center/cover no-repeat `,
             }}
           >
-            <Play Name="play_button" />
+            <Play Name="play_button link" />
           </div>
           <VideoDetails
             title={element.snippet.title}
@@ -73,7 +73,7 @@ const Frame = (props) => {
             closeFrame();
           }}
         >
-          <Close Name="close_btn" />
+          <Close Name="close_btn link" />
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@ const Frame = (props) => {
 const VideoDetails = (props) => {
   return (
     <div className="video_text">
-      <p className="video_title">{props.title}</p>
+      <p className="video_title link">{props.title}</p>
       <p className="video_time">{props.time}</p>
     </div>
   );
@@ -134,7 +134,7 @@ const Youtube = (props) => {
       </div>
       <Frame open={open} setOpen={setOpen} />
       <aside className="youtube_aside">
-        <img className="profile_pic" alt="User's Profile Pic" src={PicUrl} />
+        <img className="profile_pic link" alt="User's Profile Pic" src={PicUrl} />
         <Layers Name="yt_layers" />
       </aside>
     </>
