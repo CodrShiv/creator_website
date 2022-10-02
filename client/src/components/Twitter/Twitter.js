@@ -140,9 +140,14 @@ const Twitter = (props) => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
+          ele.classList.add("visible")
+          ele.classList.remove("invisible")
           setInterval(() => {
             autoScroll(container);
           }, 50);
+        } else {
+          ele.classList.remove("visible")
+          ele.classList.add("invisible")
         }
       },
       { threshold: 0.5 }

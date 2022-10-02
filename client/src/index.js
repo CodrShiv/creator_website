@@ -5,7 +5,7 @@ import createScrollSnap from "scroll-snap";
 
 import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root")),
-  PRODUCTION = true,
+  PRODUCTION = false,
   USER_NAME = "NomadicAmbience",
   BASE_API_URL = `${
     PRODUCTION

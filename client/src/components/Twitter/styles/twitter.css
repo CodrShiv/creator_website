@@ -1,152 +1,213 @@
 .twitter_main {
-    max-width: 98vw !important;
-    overflow-x: scroll;
-    display: flex;
-    flex-direction: column;
-    align-items:stretch;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 93vh !important; 
-    padding: 2rem 4rem;
-    gap: 2rem;
-    margin-right: 14rem;
+  max-width: 98vw !important;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 93vh !important;
+  padding: 2rem 4rem;
+  gap: 2rem;
+  margin-right: 12rem;
 }
 .twitter_main a {
-    text-decoration: none;
-    color: #16202A;
-    border-radius: .5rem;
-    padding: .3rem .75rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
+  text-decoration: none;
+  color: #16202a;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 .tweet_text a {
-    display: inline-block;
-    color: #16202A;
-    font-weight: 700;
-    padding: 0 .5rem 0 0;
-    transition: all 200ms ease;
+  display: inline-block;
+  color: #16202a;
+  font-weight: 700;
+  padding: 0 0.5rem 0 0;
+  transition: all 200ms ease;
 }
 .tweet_text a:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 .media {
-    min-height: 31rem;
+  min-height: 31rem;
 }
 /* .nomedia {
     min-height: 10rem;
 } */
 .profile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 .twitter_logo {
-    width: 4rem;height: 4rem;
-    border-radius: 50% !important;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50% !important;
 }
 .redirect_link {
-    vertical-align: middle;
+  vertical-align: middle;
 }
-.tweet{
-    position: relative;
-    color: #16202A;
-    background: rgba(255,255,255,.7);
-    border-radius: 2rem;
-    z-index: 2;
-    gap: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 2rem ;
-    transition: all 300ms ease;
-    max-width: 25rem;
-    z-index: 2;
+.tweet {
+  position: relative;
+  color: #16202a;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 2rem;
+  z-index: 2;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem;
+  transition: all 300ms ease;
+  max-width: 25rem;
+  z-index: 2;
 }
 .tweet_link {
-    display: block;
+  display: block;
 }
 .tweet img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 1rem;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 1rem;
 }
-.tweet_link:hover .tweet{
-    box-shadow: 2rem 2rem 2rem rgba(255,255,255,.05);
-    transform: scale(1.01);
+.tweet_link:hover .tweet {
+  box-shadow: 2rem 2rem 2rem rgba(255, 255, 255, 0.05);
+  transform: scale(1.01);
 }
-
+.visible .layers_twitter {
+    animation: fadeFromRight 3s ease forwards;
+}
+.invisible .layers_twitter {
+    animation: fadeToRight 3s ease forwards;
+}
+.visible .tweet  {
+    opacity: 0;
+    animation: fadeDown 2s 1.5s forwards;
+}
+.invisible .tweet {
+    animation: fadeUp 1s forwards;
+}
 .layers_twitter {
-    height: 100%;
+  height: 100%;
 }
 .layers_twitter {
-    position: absolute;
-    right: 0;
-    opacity: 1;
-    z-index: 5;
+  position: absolute;
+  right: 0;
+  opacity: 1;
+  z-index: 5;
 }
 .profile_container {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
 }
 
 .user_name_box {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
 }
 @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .user_handle_box {
-    color:rgba(22, 32, 42,.5);
+  color: rgba(22, 32, 42, 0.5);
 }
 @media only screen and (max-width: 800px) {
-    .tweet {
-        padding: 2rem 1.75rem;
-        gap: 1rem;
-    }
-    .twitter_main {
-        font-size: 13px !important;
-        margin-right: 0rem;
-        max-width: 98vw !important;
-        overflow-x: scroll;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: center;
-        flex-wrap: wrap;
-        height: 85vh !important;
-        padding: 2rem 4rem;
-        gap: 2.5rem;
-    }
-    .twitter_main_container {
-        height: 100vh !important;
-    }
-    .layers_twitter {
-        height: 100vw;
-        width: 100%;
-        transform: rotate(90deg) translateX(28%);
-        position: absolute;
-        bottom: 0;
-        opacity: 1;
-        z-index: 5;
-    }
+  .tweet {
+    padding: 2rem 1.75rem;
+    gap: 1rem;
+  }
+  .twitter_main {
+    font-size: 13px !important;
+    margin-right: 0rem;
+    max-width: 98vw !important;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 85vh !important;
+    padding: 2rem 4rem;
+    gap: 2.5rem;
+  }
+  .twitter_main_container {
+    height: 100vh !important;
+  }
+  .layers_twitter {
+    height: 100vw;
+    width: 100%;
+    transform: rotate(90deg) translateX(28%);
+    position: absolute;
+    bottom: 0;
+    opacity: 1;
+    z-index: 5;
+  }
 }
 @media only screen and (max-width: 520px) {
-    .tweet {
-        min-width: 20rem;
-        max-width: 100vw;
+  .tweet {
+    min-width: 20rem;
+    max-width: 100vw;
+  }
+}
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translate(0, -2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0rem);
+  }
+}
+@keyframes fadeFromRight {
+  0% {
+    opacity: 0;
+    transform: translate(100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes fadeToRight {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0);
     }
+    100% {
+      opacity: 0;
+      transform: translate(100%, 0);
+    }
+  }
+@keyframes fadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
 }

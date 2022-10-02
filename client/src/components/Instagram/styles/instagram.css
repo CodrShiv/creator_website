@@ -176,3 +176,33 @@
     height: auto;
   }
 }
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translate(0, -2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0rem);
+  }
+}
+@keyframes fadeFromDown {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+}

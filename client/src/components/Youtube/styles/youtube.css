@@ -2,6 +2,7 @@
   overflow-x: scroll;
   z-index: 3;
 }
+
 iframe {
   border: 0.5rem solid rgb(255, 255, 255, 0.2);
 }
@@ -19,6 +20,23 @@ iframe {
   right: 0;
   box-shadow: 0 0 0 0.25rem #b62c18, 0 0 0 0.5rem rgba(146, 48, 30, 0.75),
     0 0 0 1rem rgba(111, 48, 34, 0.5), 0 0 0 1.5rem rgba(77, 45, 37, 0.25);
+}
+.invisible .profile_pic {
+  animation: fadeUp 1s cubic-bezier(0.11, 0, 0.5, 0) forwards;
+}
+.invisible .yt_layers {
+  animation: fadeUp 1s cubic-bezier(0.11, 0, 0.5, 0) forwards;
+}
+.visible .profile_pic {
+  opacity: 0;
+  animation: fadeDown 1s 1.5s forwards;
+}
+.visible .video {
+  opacity: 0;
+  animation: fadeDown 1s 1.7s cubic-bezier(0.11, 0, 0.5, 0) forwards;
+}
+.invisible .video {
+  animation: fadeUp 1s cubic-bezier(0.11, 0, 0.5, 0) forwards;
 }
 .profile_pic.hide {
   margin-right: 1rem;
@@ -124,11 +142,12 @@ iframe {
   transform: scale(1.1);
 }
 
-.yt_layers {
+.visible .yt_layers {
   z-index: 1;
   width: 100vw;
   position: absolute;
   bottom: 0;
+  animation: fadeFromDown 2s ease-in-out forwards;
 }
 
 @media only screen and (max-width: 360px) {
@@ -138,5 +157,35 @@ iframe {
   .thumbnail {
     width: 18rem;
     min-height: 7.5rem !important;
+  }
+}
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translate(0, -2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0rem);
+  }
+}
+@keyframes fadeFromDown {
+  0% {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-2rem);
   }
 }

@@ -108,9 +108,14 @@ const Youtube = (props) => {
           setInterval(() => {
             autoScroll(container);
           }, 50);
+          ele.classList.add("visible")
+          ele.classList.remove("invisible")
+        
         }
         if (!entries[0].isIntersecting) {
           setOpen(false);
+          ele.classList.add("invisible")
+          ele.classList.remove("visible")
         }
       },
       { threshold: 0.5 }
