@@ -6,7 +6,7 @@ import AnimatedCursor from "react-animated-cursor";
 
 import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root")),
-  PRODUCTION = false,
+  PRODUCTION = true,
   USER_NAME = "NomadicAmbience",
   BASE_API_URL = `${
     PRODUCTION
